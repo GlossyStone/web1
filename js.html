@@ -9,6 +9,7 @@
     <script>
     document.write('hello world');
     </script>
+    <br><a href="index.html"style="text-decoration:none">INDEX</a>
     <br><input type="button" value="Day" onclick="
     document.querySelector('body').style.backgroundColor='white';
     document.querySelector('body').style.color='black';
@@ -24,5 +25,37 @@
     <input type="button" value="Click" onclick="
     alert('HTML CSS JS공부 하는 멋있는 융석')">
     <br><input type="text" onkeydown="alert('Key down')">
+    <input id="night_day" type="button" value="Night" onclick="
+      var target = document.querySelector('body');
+      var alist = document.querySelectorAll('a');
+      if(document.querySelector('#night_day').value === 'Night'){
+        target.style.backgroundColor='black';
+        target.style.color='white';
+        document.querySelector('#night_day').value='Day';
+        var i = 0;
+        while(i<alist.length){
+          alist[i].style.color='powderblue';
+          i=i+1;
+        }
+      } else  {
+        target.style.backgroundColor='white';
+        target.style.color='black';
+        document.querySelector('#night_day').value='Night';
+        var i = 0;
+        while(i<alist.length){
+          alist[i].style.color='indigo';
+          i=i+1;
+        }
+      }">
+      <input type="button" value="Night" onclick="
+        if(this.value === 'Night'){
+          document.querySelector('body').style.backgroundColor='black';
+          document.querySelector('body').style.color='white';
+          this.value='Day';
+        } else  {
+          document.querySelector('body').style.backgroundColor='white';
+          document.querySelector('body').style.color='black';
+          this.value='Night';
+        }">
   </body>
 </html>
